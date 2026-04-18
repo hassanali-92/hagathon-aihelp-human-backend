@@ -19,10 +19,11 @@ const app = express();
 connectDB();
 
 // 2. Middlewares
+// server.js mein cors ko aise update karein
 app.use(cors({
-    origin: process.env.CLIENT_URL || '*', 
+    origin: '*', // Abhi ke liye sab allow kar dein taake testing ho sake
     credentials: true,
-    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // OPTIONS add kiya safe requests ke liye
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
     allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
